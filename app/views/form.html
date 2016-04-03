@@ -1,0 +1,45 @@
+<!-- Form used to add new entries of employee in database -->
+<form class="form-horizontal alert alert-info" name="empList" id="empForm" ng-submit="insertarLibro(libInfo);" hidden>
+<h3 class="text-center">Añadir nuevo libro</h3>
+	<div class="form-group">
+		<label for="Name">Título:</label>
+		<input type="text" name="libInfo_name" class="form-control" placeholder="Introducir el título" ng-model="libInfo.Nombre" value="" autofocus required />
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.libInfo_name.$invalid && empList.libInfo_name.$dirty">Campo Titulo está vacio</p>
+	</div>
+	<div class="form-group">
+		<label for="Autor">Autor:</label>
+		<input type="text" name="libInfo_autor" class="form-control" placeholder="Introducir Autor" ng-model="libInfo.Autor" autofocus required />
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.libInfo_autor.$invalid && empList.libInfo_autor.$dirty">Campo Autor está vacio</p>
+	</div>
+
+	<div class="form-group">
+		<label for="Editorial">Editorial:</label>
+		<input type="text" name="emp_editorial" class="form-control" placeholder="Introducir Editorial" ng-model="libInfo.Editorial" autofocus required />
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.libInfo_editorial.$invalid && empList.libInfo_editorial.$dirty">Campo Editorial está vacio</p>
+	</div>
+
+	<div class="form-group">
+		<label for="Tematica">Temática:</label>
+		<input type="text" name="emp_tematica" class="form-control" placeholder="Introducir Temática" ng-model="libInfo.Tematica" autofocus required />
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.libInfo_tematica.$invalid && empList.libInfo_tematica.$dirty">Campo Temática está vacio</p>
+	</div>
+	
+	<div class="form-group">
+		<label for="ubicacion">Ubicación:</label>
+		<input type="text" name="emp_ubicacion" class="form-control" placeholder="Introducir Ubicación" ng-model="libInfo.Ubicacion" autofocus required />		
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.libInfo_ubicacion.$invalid && empList.libInfo_ubicacion.$dirty">Campo Ubicación está vacio</p>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-info" ng-disabled="empList.$invalid">Añadir a la base de datos</button>
+	</div>
+</form>

@@ -1,0 +1,31 @@
+
+<!-- Form used for updation of data into database -->
+<form class="form-horizontal alert alert-info" id="editForm" ng-submit="UpdateInfo(lib)"hidden>
+<h3 class="text-center">Actualizar libro</h3>
+	<div class="form-group">
+		<label for="Name">Nombre:</label>
+		<input type="text" class="form-control" ng-model="lib.Nombre" value="{{lib.Nombre}}">
+	</div>
+	
+	<div class="form-group">
+		<label for="Autor">Autor:</label>
+		<input type="text" class="form-control" ng-model="lib.Autor" value="{{lib.Autor}}">
+	</div>
+	<div class="form-group">
+		<label for="Editorial">Editorial:</label>
+		<input type="text" class="form-control" ng-model="lib.Editorial" value="{{lib.Editorial}}">
+	</div>
+	
+	<div class="form-group">
+		<label for="tematica">Temática:</label>
+		<input type="text" class="form-control" ng-model="lib.Tematica" value="{{lib.Tematica}}">
+	</div>
+	<div class="form-group">
+		<label for="Ubicacion">Ubicación:</label>
+		<input type="text" class="form-control" ng-model="lib.Ubicacion" value="{{lib.Ubicacion}}">
+	</div>
+	<div class="form-group">
+		<button class="btn btn-primary" ng-disabled="empList.$invalid" ng-click="updateMsg(lib.Id_libros)">Actualizar</button>
+	</div>
+</form>
+

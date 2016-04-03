@@ -1,0 +1,36 @@
+.jumbotron{
+	background-color: #FFFFFF !important;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+.wrapper{
+min-height: 960px;
+max-width: 900px;
+}
+form#empForm, form#editForm, form#infoForm {
+padding: 0 35px 15px;
+}
+
+table tr th{
+    background: #f8f8f8;
+    cursor: pointer;
+    font-size: 1.3em;
+}
+.search-box {
+    padding-bottom: 0;
+}
+
+.eliminar{
+	margin-top: 20px;
+}
+
+.formu{
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+@media screen and (max-width: 368px){
+.wrapper{
+    min-width: 340px;
+}   
+}

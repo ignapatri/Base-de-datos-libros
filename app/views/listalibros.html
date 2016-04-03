@@ -1,0 +1,55 @@
+﻿<div class="container wrapper" ng-controller="muestraLibros">
+  <h1 class="text-center">Listado de libros</h1>
+   <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <div class="alert alert-default navbar-brand search-box">
+		    <button class="btn btn-primary">Buscar</button>
+	    </div>
+       <div class="alert alert-default input-group search-box">
+          <span class="input-group-btn">
+            <input type="text" class="form-control" placeholder="Buscar libro en la base de datos..." ng-model="search_query">
+          </span>
+       </div>
+    </div>
+   </nav>
+  <div class="col-md-6 col-md-offset-3">
+      <div ng-include src="'app/views/infoForm.html'"></div>
+  </div>
+<div class="clearfix"></div>
+
+<!-- Table to show employee detalis -->
+<div class="table-responsive">
+<table class="table table-hover">
+<tr>
+<th>#</th>
+      <th ng-click="doSortest('Nombre')">Nombre</th>
+      <th ng-click="doSortest('Autor')">Autor</th>
+      <th ng-click="doSortest('Editorial')">Editorial</th>
+      <th></th>
+</tr>
+<tr dir-paginate="lib in libro| filter:search_query | orderBy:sortBy:reverse | itemsPerPage:5">
+<td>
+<span>{{lib.Id_libros}}</span></td>
+<td>{{lib.Nombre}}</td>
+<td>{{lib.Autor}}</td>
+<td>{{lib.Editorial}}</td>
+<td>
+<button class="btn btn-info" ng-click="Info(lib)" title="Más información"><span class="glyphicon glyphicon-plus"></span> Info</button>
+</td>
+</tr>
+<tr>
+<div class="col-md-6 col-md-offset-3">
+      <div ng-include src="'app/views/infoForm.html'"></div>
+  </div>
+</tr>
+</table>
+<dir-pagination-controls
+          max-size="5"
+          direction-links="true"
+          boundary-links="true" >
+        </dir-pagination-controls>
+<p><a class="btn btn-success" href="#/" role="button">Inicio</a></p>
+</div>
+</div>
+</div>
+</div>
